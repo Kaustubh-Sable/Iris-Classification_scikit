@@ -1,0 +1,47 @@
+=> Output of model evaluations:
+LR: 0.966667 (0.040825)
+LDA: 0.975000 (0.038188)
+KNN: 0.983333 (0.033333)
+CART: 0.975000 (0.038188)
+NB: 0.975000 (0.053359)
+/home/kaustubh/.local/lib/python3.5/site-packages/sklearn/svm/base.py:196: FutureWarning: The default value of gamma will change from 'auto' to 'scale' in version 0.22 to account better for unscaled features. Set gamma explicitly to 'auto' or 'scale' to avoid this warning.
+  "avoid this warning.", FutureWarning)
+SVM: 0.991667 (0.025000)
+
+=> Prediction using KNN model:
+>>> print(accuracy_score(Y_validation, predictions))
+0.9
+>>> print(confusion_matrix(Y_validation, predictions))
+[[ 7  0  0]
+ [ 0 11  1]
+ [ 0  2  9]]
+>>> print(classification_report(Y_validation, predictions))
+                 precision    recall  f1-score   support
+
+    Iris-setosa       1.00      1.00      1.00         7
+Iris-versicolor       0.85      0.92      0.88        12
+ Iris-virginica       0.90      0.82      0.86        11
+
+      micro avg       0.90      0.90      0.90        30
+      macro avg       0.92      0.91      0.91        30
+   weighted avg       0.90      0.90      0.90        30
+
+=> Prediction using SVM model:
+>>> print(accuracy_score(Y_validation, svmPredictions))
+0.9333333333333333
+>>> print(confusion_matrix(Y_validation, svmPredictions))  
+[[ 7  0  0]
+ [ 0 10  2]
+ [ 0  0 11]]
+>>> print(classification_report(Y_validation, svmPredictions))
+                 precision    recall  f1-score   support
+
+    Iris-setosa       1.00      1.00      1.00         7
+Iris-versicolor       1.00      0.83      0.91        12
+ Iris-virginica       0.85      1.00      0.92        11
+
+      micro avg       0.93      0.93      0.93        30
+      macro avg       0.95      0.94      0.94        30
+   weighted avg       0.94      0.93      0.93        30
+
+>>> 
